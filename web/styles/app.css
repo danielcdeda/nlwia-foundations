@@ -9,6 +9,21 @@
     margin-top: -5px;
 }
 
-#app > img {
-    width: 64px;
+#app > h2 {
+    align-self: flex-start;
+    margin-top: 64px;
+    color: #fff;
+}
+
+#app > p {
+    align-self: flex-start;
+    text-align: justify;
+    width: 512px;
+    color: #fff;
+    margin-top: -5px;
+}
+
+#app .placeholder {
+    color: #7c7c8a;
+    user-select: none;
 }

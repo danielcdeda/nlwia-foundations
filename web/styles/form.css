@@ -42,20 +42,3 @@
     color: #fff;
 }
 
-#app > h2 {
-    align-self: flex-start;
-    margin-top: 104px;
-    color: #fff;
-}
-
-#app > p {
-    align-self: flex-start;
-    text-align: justify;
-    width: 512px;
-    color: #fff;
-}
-
-#app .placeholder {
-    color: #7c7c8a;
-    user-select: none;
-}
