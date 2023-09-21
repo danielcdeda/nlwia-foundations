@@ -1,0 +1,1 @@
+export const summaryExample = "O javascript é um crilens"

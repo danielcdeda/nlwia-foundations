@@ -1,0 +1,1 @@
+export const transcriptionExample = ` O Javascript é uma linguagem trelens do crilens do froukens.`
