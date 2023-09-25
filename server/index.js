@@ -1,5 +1,6 @@
 import cors from 'cors'
 import express, { response } from 'express'
+import { convert } from './convert.js';
 import { download } from './download.js';
 import { transcribe } from './transcribe.js';
 import { summarize } from './summarize.js';
@@ -9,15 +10,25 @@ app.use(express.json())
 app.use(cors());
 
 app.get('/summary/:id', async (req,res) => {
+    try {
     await download(req.params.id)
-    const result = await transcribe();
+    const audioConverted = await convert()
+    const result = await transcribe(audioConverted);
     return res.json( { result } )
+}
+    catch(error) {
+        console.log(error)
+        return res.json({error})
+    }
 })
 
 app.post('/summary', async(req,res) => {
-    const result = await summarize(req.body.text)
+     try {const result = await summarize(req.body.text)
     return res.json({ result })
-
+    } catch(error) {
+        console.log(error)
+        return res.json({error})
+    }
 })
 
 app.listen(3333, () => console.log('rodando garai'))
